@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🍽️ Grabit - Online Food Ordering System
 
-## Getting Started
+Grabit is a modern **online food ordering system** built using **Next.js**, **Firebase**, and **Framer Motion**. It includes **admin and user dashboards**, **real-time order updates**, and **OTP authentication**.
 
-First, run the development server:
+---
 
-```bash
+## 🚀 Features
+
+### 🔹 **User Features**
+✅ Sign up & log in using **Google** or **Phone OTP**  
+✅ Browse and add food items to the **cart**  
+✅ Checkout and place orders with **real-time updates**  
+✅ Track order status: **Preparing → Ready for Pickup → Completed**  
+✅ Secure **profile management & logout**  
+
+### 🔹 **Admin Features**
+✅ **Admin dashboard** to manage all orders  
+✅ Update order statuses **(Preparing → Ready → Completed)**  
+✅ **Cancel orders** with confirmation popup  
+✅ View **customer details** (Name, Email, Phone)  
+✅ **Role-based authentication** (Only Admins can access the dashboard)  
+
+---
+
+## 📦 **Installation & Setup**
+
+### 1️⃣ Clone the Repository  
+```sh
+git clone https://github.com/NandakishoreN09/Grabit.git
+cd grabit
+
+Install Dependencies
+
+npm install
+
+Create a .env.local file in the project root and add your Firebase credentials:
+NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_auth_domain
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
+
+
+Start the Development Server
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+📂 grabit
+ ┣ 📂 components
+ ┃ ┣ 📜 Navbar.tsx
+ ┃ ┣ 📜 Cart.tsx
+ ┃ ┣ 📜 Orders.tsx
+ ┃ ┣ 📜 Admin.tsx
+ ┃ ┣ 📜 Profile.tsx
+ ┃ ┗ 📜 Signup.tsx
+ ┣ 📂 lib
+ ┃ ┗ 📜 firebase.ts   # Firebase configuration & functions
+ ┣ 📂 pages
+ ┃ ┣ 📜 index.tsx
+ ┃ ┣ 📜 menu.tsx
+ ┃ ┣ 📜 cart.tsx
+ ┃ ┣ 📜 orders.tsx
+ ┃ ┣ 📜 admin.tsx
+ ┃ ┣ 📜 signup.tsx
+ ┃ ┗ 📜 login.tsx
+ ┣ 📜 .env.local       # Firebase credentials
+ ┣ 📜 package.json
+ ┗ 📜 README.md
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🔑 Admin Access
+To make a user an admin, run this in Firebase Firestore:
 
-## Learn More
+Go to Firebase Console → Firestore Database
+Manually create a document inside the admins collection:
 
-To learn more about Next.js, take a look at the following resources:
+Collection: admins
+Document ID: userUID
+Data: { "role": "admin" }
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🤝 Contributing
+👨‍💻 Pull requests are welcome!
+For major changes, open an issue first to discuss what you would like to change.
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
